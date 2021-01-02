@@ -1,0 +1,17 @@
+node_modules
+package.json
+package-lock.json
+yarn.lock
+tsconfig.json
+.eslintrc.json
+babel.config.js
+
+dist
+lib
+build
+
+.expo
+.expo-shared
+
+e2e
+**/coverage

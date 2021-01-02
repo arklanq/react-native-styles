@@ -1,0 +1,22 @@
+{
+  "name": "react-native-styles-example",
+  "displayName": "RN-Styles Example",
+  "expo": {
+    "name": "react-native-styles-example",
+    "slug": "react-native-styles-example",
+    "description": "Example app for react-native-styles",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
