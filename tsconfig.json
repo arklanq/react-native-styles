@@ -19,7 +19,7 @@
     "target": "esnext",
     "baseUrl": "src",
     "paths": {
-      "react-native-styles": ["./index"]
+      "@idkman/react-native-styles": ["./index"]
     }
   }
 }

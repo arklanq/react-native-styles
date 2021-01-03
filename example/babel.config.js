@@ -12,7 +12,7 @@ module.exports = function (api) {
         {
           alias: {
             // For development, we want to alias the library to the source
-            extensions: ['.js', '.ios.js', '.android.js', '.json'],
+            extensions: ['.tsx', '.ios.tsx', '.android.tsx', '.ts', '.ios.ts', '.android.ts', '.json'] ,
             [pak.name]: path.join(__dirname, '..', pak.source),
           },
         },

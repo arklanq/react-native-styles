@@ -1,6 +1,6 @@
+import {makeStyles} from '@idkman/react-native-styles';
 import React from 'react';
 import {Text, View} from 'react-native';
-import {makeStyles} from 'react-native-styles';
 
 import {MyTheme} from './theme';
 

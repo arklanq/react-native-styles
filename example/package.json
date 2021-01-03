@@ -1,6 +1,6 @@
 {
-  "name": "react-native-styles-example",
-  "description": "Example app for react-native-styles",
+  "name": "@idkman/react-native-styles-example",
+  "description": "Example app for @idkman/react-native-styles",
   "version": "0.1.0",
   "private": true,
   "main": "index",

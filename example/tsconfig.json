@@ -17,10 +17,13 @@
     "strictNullChecks": true,
     "baseUrl": "src",
     "paths": {
-      "react-native-styles": ["../../src/*"],
+      "@idkman/react-native-styles": ["../../src/*"]
     }
   },
   "exclude": [
     "node_modules"
+  ],
+  "include": [
+    "../src"
   ]
 }
