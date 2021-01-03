@@ -1,12 +1,21 @@
 {
-  "name": "react-native-styles",
-  "version": "0.1.0",
+  "name": "@idkman/react-native-styles",
+  "version": "0.0.0",
   "description": "Ulitmate styling solution for react-native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
   "react-native": "src/index",
   "source": "src/index",
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build",
+    "release": "dotenv release-it",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn example && yarn"
+  },
   "files": [
     "src",
     "lib",
@@ -14,15 +23,6 @@
     "!**/__fixtures__",
     "!**/__mocks__"
   ],
-  "scripts": {
-    "test": "jest",
-    "typescript": "tsc --noEmit",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "build": "bob build",
-    "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn"
-  },
   "keywords": [
     "react-native"
   ],
@@ -34,7 +34,8 @@
   },
   "homepage": "https://github.com/IdkMan2/react-native-styles#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "jest": {
     "preset": "react-native",
@@ -57,13 +58,17 @@
   "release-it": {
     "git": {
       "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
+      "tagName": "v${version}",
+      "requireCleanWorkingDir": true,
+      "requireBranch": "master",
+      "requireCommits": true
     },
     "npm": {
       "publish": true
     },
     "github": {
-      "release": true
+      "release": true,
+      "preRelease": true
     },
     "plugins": {
       "@release-it/conventional-changelog": {
@@ -94,6 +99,7 @@
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "commitlint": "^11.0.0",
+    "dotenv-cli": "^4.0.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-config-universe": "^6.0.1",
