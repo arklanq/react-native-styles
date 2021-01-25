@@ -1,40 +1,47 @@
-import React, {ComponentType, forwardRef} from 'react';
-import {StyleSheet} from 'react-native';
+import React, {ComponentType, forwardRef, ForwardRefRenderFunction, PropsWithChildren} from 'react';
 
-import {MakeStylesFunc} from './index';
+import {NamedStyles, Styles, VariousStyles} from './';
+import processStyles from './processStyles';
 import {StylesContext} from './StylesContext';
 import {getDisplayName} from './utils/components-utils';
 
-type NamedStyles<T> = StyleSheet.NamedStyles<T>;
-
-export interface WithStylesProps<T extends object, S extends NamedStyles<S> | NamedStyles<any>> {
+export interface WithStylesProps<
+  T extends object, // theme
+  SK extends string = string // styles
+> {
   theme: T;
-  stylesheet: S;
+  stylesheet: NamedStyles<Record<SK, VariousStyles>>;
 }
 
+type ForwardableProps<
+  T extends object, // theme
+  P extends object = object, // props
+  SK extends string = string // styles
+> = Omit<P, keyof WithStylesProps<T, SK>>;
+
 export default function withStyles<
-  T extends object,
-  S extends NamedStyles<S> | NamedStyles<any>,
-  MakeS extends MakeStylesFunc<T, S>,
-  PropsT extends WithStylesProps<T, MakeS>
->(makeStyles: MakeS) {
-  return function (WrappedComponent: ComponentType<PropsT>) {
-    type Ref = HTMLElement;
-    type ForwardRefProps = Omit<PropsT, keyof WithStylesProps<T, MakeS>>;
+  T extends object, // theme
+  P extends object = object, // props
+  SK extends string = string // styles
+>(makeStyles: Styles<T, P, SK>) {
+  return function (WrappedComponent: ComponentType<P>) {
+    const forwardRefFunc = forwardRef<HTMLElement, ForwardableProps<T, P, SK>>(
+      (
+        props: PropsWithChildren<ForwardableProps<T, P, SK>>,
+        ref: Parameters<ForwardRefRenderFunction<HTMLElement, ForwardableProps<T, P, SK>>>[1]
+      ) => (
+        <StylesContext.Consumer>
+          {(theme: object) => {
+            const stylesheet = processStyles(theme as T, props as P, makeStyles);
 
-    const forwardRefFunc = forwardRef<Ref, ForwardRefProps>((props, ref) => (
-      <StylesContext.Consumer>
-        {(theme: object) => {
-          const stylesheet: ReturnType<MakeS> = StyleSheet.create(makeStyles(theme as T));
-
-          return <WrappedComponent forwardedRef={ref} {...(props as PropsT)} theme={theme} stylesheet={stylesheet} />;
-        }}
-      </StylesContext.Consumer>
-    ));
+            return <WrappedComponent forwardedRef={ref} {...(props as P)} theme={theme} stylesheet={stylesheet} />;
+          }}
+        </StylesContext.Consumer>
+      )
+    );
 
     forwardRefFunc.displayName = `withStyles(${getDisplayName(WrappedComponent)})`;
 
     return forwardRefFunc;
   };
 }
-

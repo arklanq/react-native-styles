@@ -1,13 +1,15 @@
 import {StylesProvider} from '@idkman/react-native-styles';
 import React from 'react';
 
-import MyFunctionComponent from './MyFunctionComponent';
 import {theme} from './theme';
+import UseStylesTestComponent from './UseStylesTestComponent';
+import WithStylesTestComponent from './WithStylesTestComponent';
 
 export default function App() {
   return (
     <StylesProvider theme={theme}>
-      <MyFunctionComponent />
+      <UseStylesTestComponent fontSize={32} />
+      <WithStylesTestComponent fontSize={16} />
     </StylesProvider>
   );
 }

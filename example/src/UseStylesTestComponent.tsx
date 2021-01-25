@@ -4,25 +4,29 @@ import {Text, View} from 'react-native';
 
 import {MyTheme} from './theme';
 
+interface IProps {
+  fontSize: number;
+}
+
 const useStyles = makeStyles((theme: MyTheme) => ({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
+  text: (props: IProps) => ({
     color: theme.colors.primary,
+    fontSize: props.fontSize,
     fontWeight: 'bold',
-    fontSize: 24,
-  },
+  }),
 }));
 
-export default function MyFunctionComponent() {
-  const stylesheet = useStyles();
+export default function UseStylesTestComponent(props: IProps) {
+  const stylesheet = useStyles(props);
 
   return (
     <View style={stylesheet.container}>
-      <Text style={stylesheet.text}>Hey! This is a blue text.</Text>
+      <Text style={stylesheet.text}>Hey! This is primary text ({props.fontSize}px).</Text>
     </View>
   );
 }
