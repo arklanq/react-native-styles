@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/IdkMan2/react-native-styles/compare/v0.3.0...v0.3.1) (2021-01-25)
+
+
+### Features
+
+* **docs:** update readme ([f4cbca3](https://github.com/IdkMan2/react-native-styles/commit/f4cbca330745f4054d3725df48410121367a2a35))
+
 # [0.3.0](https://github.com/IdkMan2/react-native-styles/compare/v0.2.0...v0.3.0) (2021-01-25)
 
 
