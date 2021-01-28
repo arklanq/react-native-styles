@@ -1,3 +1,11 @@
+## [0.3.2](https://github.com/IdkMan2/react-native-styles/compare/v0.3.1...v0.3.2) (2021-01-28)
+
+
+### Features
+
+* **codebase:** better fragmentation ([f115fea](https://github.com/IdkMan2/react-native-styles/commit/f115fea24251e39ed55c9b4613751177eaab903b))
+* **use-styles:** better typescript support ([d7da9ad](https://github.com/IdkMan2/react-native-styles/commit/d7da9ad50848c850f18227282c6d8f9c05f0b391))
+
 ## [0.3.1](https://github.com/IdkMan2/react-native-styles/compare/v0.3.0...v0.3.1) (2021-01-25)
 
 
