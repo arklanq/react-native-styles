@@ -1,4 +1,4 @@
-import {makeStyles} from '@idkman/react-native-styles';
+import {createStyles, makeStyles} from '@idkman/react-native-styles';
 import React from 'react';
 import {Text, View} from 'react-native';
 
@@ -8,18 +8,20 @@ interface IProps {
   fontSize: number;
 }
 
-const useStyles = makeStyles((theme: MyTheme) => ({
+const styles = createStyles({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: (props: IProps) => ({
-    color: theme.colors.primary,
+    color: 'red',
     fontSize: props.fontSize,
     fontWeight: 'bold',
   }),
-}));
+});
+
+/*const useStyles = makeStyles(styles);
 
 export default function UseStylesFunctionComponent(props: IProps) {
   const stylesheet = useStyles(props);
@@ -29,4 +31,4 @@ export default function UseStylesFunctionComponent(props: IProps) {
       <Text style={stylesheet.text}>Hey! This is a green text on blue background.</Text>
     </View>
   );
-}
+}*/

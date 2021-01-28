@@ -1,11 +1,13 @@
-import {InlineStyles, MakeStylesObjectFn} from '@idkman/react-native-styles';
+import {MakeStylesObjectFn, PropsBasedStyles, StylesObject} from '@idkman/react-native-styles';
 
-export function isMakeStylesFunc<P extends object, T extends object, SK extends string>(
+export function isMakeStylesFunc<T extends object, P extends object, S extends StylesObject<P, S>>(
   makeStyles: object | Function
-): makeStyles is MakeStylesObjectFn<T, P, SK> {
+): makeStyles is MakeStylesObjectFn<T, P, S> {
   return typeof makeStyles === 'function';
 }
 
-export function isInlineStyles<P extends object>(inlineStyles: object | Function): inlineStyles is InlineStyles<P> {
+export function isPropsBasedStyles<P extends object>(
+  inlineStyles: object | Function
+): inlineStyles is PropsBasedStyles<P> {
   return typeof inlineStyles === 'function';
 }

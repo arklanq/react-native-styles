@@ -1,7 +1,5 @@
-import {Styles} from './models';
+import {PropsBasedStyles, StylesObject, VariousStyles} from './models';
 
-export default function createStyles<T extends object, P extends object = object, SK extends string = string>(
-  styles: Styles<T, P, SK>
-): Styles<T, P, SK> {
+export default function createStyles<P extends object = object, S extends StylesObject<P, S> = object>(styles: S): S {
   return styles;
 }
