@@ -21,12 +21,12 @@ const useStyles = makeStyles((theme: MyTheme) => ({
   }),
 }));
 
-export default function UseStylesTestComponent(props: IProps) {
+export default function UseStylesFunctionComponent(props: IProps) {
   const stylesheet = useStyles(props);
 
   return (
     <View style={stylesheet.container}>
-      <Text style={stylesheet.text}>Hey! This is primary text ({props.fontSize}px).</Text>
+      <Text style={stylesheet.text}>Hey! This is a green text on blue background.</Text>
     </View>
   );
 }

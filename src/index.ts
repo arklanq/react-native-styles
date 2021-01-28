@@ -1,3 +1,4 @@
+export {default as createStyles} from './createStyles';
 export {default as makeStyles} from './makeStyles';
 export * from './models';
 export {StylesContext, StylesProvider, StylesProviderProps} from './StylesContext';

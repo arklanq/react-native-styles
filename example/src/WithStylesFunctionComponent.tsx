@@ -22,14 +22,14 @@ const styles = createStyles((theme: MyTheme) => ({
   }),
 }));
 
-function UseStylesTestComponent(props: IProps) {
+function WithStylesFunctionComponent(props: IProps) {
   const {stylesheet} = props;
 
   return (
     <View style={stylesheet.container}>
-      <Text style={stylesheet.text}>Hey! This is secondary text ({props.fontSize}px).</Text>
+      <Text style={stylesheet.text}>Hey! This is a green text on blue background.</Text>
     </View>
   );
 }
 
-export default withStyles(styles)(UseStylesTestComponent);
+export default withStyles(styles)(WithStylesFunctionComponent);
