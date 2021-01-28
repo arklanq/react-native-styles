@@ -1,6 +1,6 @@
 import {useMemo} from 'react';
 
-import {Styles, UseStylesHook, VariousStyles} from './';
+import {Styles, UseStylesHook, VariousStyles} from './models';
 import processStyles from './processStyles';
 import useTheme from './useTheme';
 

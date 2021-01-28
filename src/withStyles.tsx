@@ -1,6 +1,6 @@
 import React, {ComponentType, forwardRef, ForwardRefRenderFunction, PropsWithChildren} from 'react';
 
-import {NamedStyles, Styles, VariousStyles} from './';
+import {NamedStyles, Styles, VariousStyles} from './models';
 import processStyles from './processStyles';
 import {StylesContext} from './StylesContext';
 import {getDisplayName} from './utils/components-utils';

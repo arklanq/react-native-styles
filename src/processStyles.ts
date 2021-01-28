@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {NamedStyles, Styles, StylesObject, VariousStyles} from './';
+import {NamedStyles, Styles, StylesObject, VariousStyles} from './models';
 import {isInlineStyles, isMakeStylesFunc} from './utils/guards';
 
 export default function processStyles<
