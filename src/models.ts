@@ -14,6 +14,6 @@ export type Styles<T extends object, P extends object = object, SK extends strin
   theme: T
 ) => StylesObject<P, SK> | MakeStylesObjectFn<T, P, SK>;
 
-export type UseStylesHook<P extends object, SO extends NamedStyles<SO> | NamedStyles<any>> = (
-  props: P
-) => NamedStyles<SO>;
+export type UseStylesHook<P extends object, SO extends NamedStyles<SO> | NamedStyles<any>> = keyof P extends never
+  ? (props?: unknown) => NamedStyles<SO>
+  : (props: P) => NamedStyles<SO>;

@@ -15,7 +15,7 @@ function makeStyles<
     return useMemo(() => {
       return processStyles(theme, props, makeStyles);
     }, [theme, props, makeStyles]);
-  };
+  } as UseStylesHook<P, Record<SK, VariousStyles>>;
 }
 
 export default makeStyles;
