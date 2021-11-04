@@ -1,6 +1,6 @@
 # @idkman/react-native-styles
 
-* 💪 Ulitmate styling solution for React-Native.
+* 💪 Ultimate styling solution for React-Native.
 * 🎨 Out of box theming solution.
 * 😱 Dynamically changing styles based on props.
 * 📘 First-class TypeScript support.
